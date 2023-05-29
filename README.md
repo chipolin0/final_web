@@ -1,36 +1,4 @@
 # Courses Site
-> This is a fullstack courses site on Django and Next.js(React) built for learning.
-
-
-## About
-This is a courses site on Django and Next.js(React).
-For more details look for README files in backend/frontend folder.
-
-API specification:
-- A swagger-ui view at api/v1/
-- A JSON view at api/v1/swagger.json
-- A YAML view at api/v1/swagger.yaml
-- A ReDoc view at api/v1/redoc/
-
-
-## Dependencies
-The base project dependencies:
-
-- docker
-- python version 3.6 +
-- django 2.2
-- PostgreSQL 
-- djangorestframework 3.10
-- celery  with extras "redis" 4.3
-- redis 3.3
-- node.js
-- next ^9.2.1
-- react
-- redux
-
-The complete list of dependencies can be found at backend/requirements.txt, backend/requirements-dev.txt and frontend/package.json file.
-
-
 ## Usage
 Create 3 files in main folder:
 .env.dev 
@@ -113,19 +81,7 @@ $ docker-compose exec db psql --username=hello_django --dbname=hello_django_dev
 # Down
 $ docker-compose down -v
 ```
-#### Tests (in development)
-```
-# backend pytest
-$ docker-compose exec web pytest
 
-# frontend jest
-$ docker-compose exec frontend npm run test
-
-# frontend cypress
-$ docker-compose exec frontend npm run cypress:open
-```
-
----
 ### Production:
 ```
 # Up
@@ -137,13 +93,6 @@ $ docker-compose -f docker-compose.prod.yml up -d --build
 # - api (swagger) http://localhost:1337/api/v1/
 # - api (redoc) http://localhost:1337/api/v1/redoc/ 
 
-# Logs
-$ docker-compose -f docker-compose.prod.yml logs -f
-
-# if you need to do something inside container
-$ docker-compose -f docker-compose.prod.yml exec <name of container, for example - web or frontend or db> <command, for example - python manage.py ... > 
 
 # Down
 $ docker-compose -f docker-compose.prod.yml down -v
-```
----
